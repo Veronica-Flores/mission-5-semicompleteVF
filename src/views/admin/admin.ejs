@@ -1,0 +1,186 @@
+<%- include ('../partials/headerAdm') %>
+<main class="container main-container">
+    <form class="busqueda__form">
+        <button type="submit" class="busqueda__button">
+            <img src="../../img/icons/search_icon.svg" alt="Icono de búsqueda">
+        </button>
+        <input type="text" name="busqueda"  class="busqueda__input" placeholder="código, nombre o categoria">
+    </form>
+    <section class="listado-container">
+        <article class="listado__header">
+            <h1 class="listado__title">LISTADO DE PRODUCTOS</h1>
+            <div class="listado__functions">
+                <h3 class="functions__title">AGREGAR</h3>
+                <button class="functions__button">+</button>
+            </div>
+        </article>
+
+        <ul class="listado__items"> 
+           <li class="listado__item">
+                <p class="listado__titles">ID</p>
+                <p class="listado__titles">Código</p>
+                <p class="listado__titles">Nombre del Producto</p>
+                <p class="listado__titles">Categoria</p>
+           </li>
+           <li class="listado__item">
+                <p class="listado-item__text">1</p>
+                <p class="listado-item__text">STW001001</p>
+                <p class="listado-item__text">Baby Yoda Blueball</p>
+                <p class="listado-item__text">STAR WARS</p>
+                <a href="#">
+                    <img src="../../img/icons/edit_pencil.svg" alt="Editar producto">
+                </a>
+                <a href="#">
+                    <img src="../../img/icons/delete_trash.svg" alt="Borrar producto">
+                </a>
+           </li>
+           <li class="listado__item">
+                <p class="listado-item__text">2</p>
+                <p class="listado-item__text">STW001002</p>
+                <p class="listado-item__text">Boba Fett Fighter</p>
+                <p class="listado-item__text">STAR WARS</p>
+                <a href="#">
+                    <img src="../../img/icons/edit_pencil.svg" alt="Editar producto">
+                </a>
+                <a href="#">
+                    <img src="../../img/icons/delete_trash.svg" alt="Borrar producto">
+                </a>
+           </li>
+           <li class="listado__item">
+                <p class="listado-item__text">3</p>
+                <p class="listado-item__text">STW001003</p>
+                <p class="listado-item__text">Luke Skylwalker & Grogu</p>
+                <p class="listado-item__text">STAR WARS</p>
+                <a href="#">
+                    <img src="../../img/icons/edit_pencil.svg" alt="Editar producto">
+                </a>
+                <a href="#">
+                    <img src="../../img/icons/delete_trash.svg" alt="Borrar producto">
+                </a>
+           </li>
+           <li class="listado__item">
+                <p class="listado-item__text">4</p>
+                <p class="listado-item__text">STW001004</p>
+                <p class="listado-item__text">Stormtrooper Lightsaber</p>
+                <p class="listado-item__text">STAR WARS</p>
+                <a href="#">
+                    <img src="../../img/icons/edit_pencil.svg" alt="Editar producto">
+                </a>
+                <a href="#">
+                    <img src="../../img/icons/delete_trash.svg" alt="Borrar producto">
+                </a>
+           </li>
+           <li class="listado__item">
+                <p class="listado-item__text">5</p>
+                <p class="listado-item__text">PKM001001</p>
+                <p class="listado-item__text">Charmander Smiley</p>
+                <p class="listado-item__text">POKEMON</p>
+                <a href="#">
+                    <img src="../../img/icons/edit_pencil.svg" alt="Editar producto">
+                </a>
+                <a href="#">
+                    <img src="../../img/icons/delete_trash.svg" alt="Borrar producto">
+                </a>
+           </li>
+           <li class="listado__item">
+                <p class="listado-item__text">6</p>
+                <p class="listado-item__text">PKM001002</p>
+                <p class="listado-item__text">Dragonite Hi!</p>
+                <p class="listado-item__text">POKEMON</p>
+                <a href="#">
+                    <img src="../../img/icons/edit_pencil.svg" alt="Editar producto">
+                </a>
+                <a href="#">
+                    <img src="../../img/icons/delete_trash.svg" alt="Borrar producto">
+                </a>
+           </li>
+           <li class="listado__item">
+                <p class="listado-item__text">7</p>
+                <p class="listado-item__text">PKM001003</p>
+                <p class="listado-item__text">Pidgeotto Flying</p>
+                <p class="listado-item__text">POKEMON</p>
+                <a href="#">
+                    <img src="../../img/icons/edit_pencil.svg" alt="Editar producto">
+                </a>
+                <a href="#">
+                    <img src="../../img/icons/delete_trash.svg" alt="Borrar producto">
+                </a>
+           </li>
+           <li class="listado__item">
+                <p class="listado-item__text">8</p>
+                <p class="listado-item__text">PKM001004</p>
+                <p class="listado-item__text">Pikachu Smiley</p>
+                <p class="listado-item__text">POKEMON</p>
+                <a href="#">
+                    <img src="../../img/icons/edit_pencil.svg" alt="Editar producto">
+                </a>
+                <a href="#">
+                    <img src="../../img/icons/delete_trash.svg" alt="Borrar producto">
+                </a>
+           </li>
+           <li class="listado__item">
+                <p class="listado-item__text">9</p>
+                <p class="listado-item__text">PKM001005</p>
+                <p class="listado-item__text">Vulpix Fancy</p>
+                <p class="listado-item__text">POKEMON</p>
+                <a href="#">
+                    <img src="../../img/icons/edit_pencil.svg" alt="Editar producto">
+                </a>
+                <a href="#">
+                    <img src="../../img/icons/delete_trash.svg" alt="Borrar producto">
+                </a>
+           </li>
+           <li class="listado__item">
+                <p class="listado-item__text">10</p>
+                <p class="listado-item__text">HPT001001</p>
+                <p class="listado-item__text">Harry Potter & Hegwid</p>
+                <p class="listado-item__text">HARRY POTTER</p>
+                <a href="#">
+                    <img src="../../img/icons/edit_pencil.svg" alt="Editar producto">
+                </a>
+                <a href="#">
+                    <img src="../../img/icons/delete_trash.svg" alt="Borrar producto">
+                </a>
+           </li>
+           <li class="listado__item">
+                <p class="listado-item__text">11</p>
+                <p class="listado-item__text">HPT001002</p>
+                <p class="listado-item__text">Herminione Ball Dress</p>
+                <p class="listado-item__text">HARRY POTTER</p>
+                <a href="#">
+                    <img src="../../img/icons/edit_pencil.svg" alt="Editar producto">
+                </a>
+                <a href="#">
+                    <img src="../../img/icons/delete_trash.svg" alt="Borrar producto">
+                </a>
+           </li>
+           <li class="listado__item">
+                <p class="listado-item__text">12</p>
+                <p class="listado-item__text">HPT001003</p>
+                <p class="listado-item__text">Luna Lovegood Lion Mask</p>
+                <p class="listado-item__text">HARRY POTTER</p>
+                <a href="#">
+                    <img src="../../img/icons/edit_pencil.svg" alt="Editar producto">
+                </a>
+                <a href="#">
+                    <img src="../../img/icons/delete_trash.svg" alt="Borrar producto">
+                </a>
+           </li>
+           <li class="listado__item">
+                <p class="listado-item__text">13</p>
+                <p class="listado-item__text">HPT001004</p>
+                <p class="listado-item__text">Snape Patronus</p>
+                <p class="listado-item__text">HARRY POTTER</p>
+                <a href="#">
+                    <img src="../../img/icons/edit_pencil.svg" alt="Editar producto">
+                </a>
+                <a href="#">
+                    <img src="../../img/icons/delete_trash.svg" alt="Borrar producto">
+                </a>
+           </li>
+        </ul>
+
+    </section>
+
+</main>
+<%- include ('../partials/footerAdm') %>

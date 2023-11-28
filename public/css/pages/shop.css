@@ -1,0 +1,58 @@
+.shop-container{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--spacing-12);
+    padding-top: var(--spacing-68);
+}
+
+.gallery__items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.pagination {
+    font-size: var(--font-small);
+    font-weight: 700;
+    display: flex;
+    padding: var(--spacing-68) 0;
+    gap: var(--spacing-8);
+    justify-content: center;
+}
+
+.page__link {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    padding: 5px 4px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transition: background-color .3s;
+    border: 1px solid var(--dark-300);
+    border-radius: 5px;
+}
+
+.page__link:hover:not(.active) {
+    color: var(--light-bg-solid);
+    border: 1px solid var(--primary-solid);
+    background-color: var(--primary-solid);
+}
+
+.active {
+    color: var(--primary-solid);
+    border: 1px solid var(--primary-solid);
+}
+
+.isDisabled {
+    cursor: not-allowed;
+    border-radius: 5px;
+    background-color: var(--dark-bg-solid);
+    opacity: .2;
+}
+
+.isDisabled > a {
+    color: currentColor;
+    display: inline-block;  /* For IE11/ MS Edge bug */
+    pointer-events: none;
+    text-decoration: none;
+}

@@ -1,0 +1,73 @@
+.carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    /* valor a modificar */
+}
+
+.carrito__titulo {
+    font-size: 46px;
+}
+
+.carrito-info {
+    font-size: 16px;
+}
+
+.carrito__producto {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrito__producto__nombre {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.carrito__producto__franquicia {
+    color: #30343F;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.carrito__producto__precio {
+    color: #333333;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* .btn {
+    background: #F24E1E;
+    color: #FFFFFF;
+    width: 18px;
+    height: 16px;
+    padding: 4px;
+    border: none
+} */
+
+/* RESUMEN */
+
+.carrito__resumen__titulo {
+    font-size: 46px;
+}
+
+.carrito__resumen__info div h6 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.carrito__resumen__info div p {
+    color: #747474;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.carrito__resumen__boton {
+    background-color: #FF3333;
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 700;
+    width: 572px;
+    height: 68.66px;
+}

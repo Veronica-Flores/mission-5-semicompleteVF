@@ -1,0 +1,11 @@
+.form__container{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.form-contact {
+    padding: 50px 55px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin-bottom: 50px;
+} 

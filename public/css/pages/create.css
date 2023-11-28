@@ -1,0 +1,114 @@
+/****** CREATE.HTML - CSS *********/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
+
+section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.form-separador {
+    padding-bottom: var(--spacing-24);
+}
+
+h1 {
+    font-family: var(--alternative-font);
+    font-size: var(--font-display);
+    padding: var(--spacing-36) 0;
+    font-weight: 700;
+}
+
+.form-categ, .form-licencia {
+    font-family: var(--base-font);
+    font-size: var(--font-large);
+    padding-right: var(--spacing-8);
+    font-weight: 300;
+    color: var(--dark-solid);
+}
+
+#categoria, #licencia, #cuotas {
+    font-family: var(--base-font);
+    font-size: var(--font-medium);
+    border: 1.5px solid var(--dark-solid);
+    border-radius: 2.5px;
+    margin-right: var(--spacing-24);
+    flex-shrink: 0;
+    width: 20%;
+    color: var(--dark-bg-solid);
+}
+
+.form-nomProd, .form-codigo, .form-precio, .form-stock, .form-descuento, .form-cuotas, .form-img {
+    font-family: var(--base-font);
+    color: var(--dark-bg-solid);
+    font-size: var(--font-large);
+    font-weight: 400;
+}
+
+.input_nuevoItem {
+    border: none;
+    border-bottom: 2px solid var(--primary-solid);
+    outline: none;
+    font-size: var(--font-medium);
+    margin: var(--spacing-8);
+    font-weight: 400;
+    width: 270px;
+}
+
+textarea {
+    font-family: var(--base-font);
+    font-size: var(--font-small);
+    font-weight: 400;
+    padding-left: var(--spacing-8);
+    padding-top: var(--spacing-8);
+    border-radius: 4px;
+    border: 1px solid var(--dark-bg-solid);
+}
+
+#codigo, #precio {
+    width: 130px;
+}
+
+#stock, #descuento {
+    width: 55px;
+}
+
+.form-precio, .form-stock {
+    margin-left: var(--spacing-16);
+}
+
+#imagenes {
+    font-size: var(--font-xsmall);
+}
+
+.producto-btn, .limpiar-btn {
+    background-color: var(--primary-solid);
+    font-size: var(--font-xsmall);
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--light-font-solid);
+    border: none;
+    padding: var(--spacing-12) var(--spacing-28);
+    margin: auto; 
+    transition: .3s;
+}
+
+.producto-btn:hover, .limpiar-btn:hover {
+    box-shadow: 1px 1px 5px var(--dark-bg-solid);
+    background-color: var(--dark-solid);
+    transform: translateY(-1px);
+}
+
+.limpiar-btn {
+    padding: var(--spacing-12) var(--spacing-68);
+    margin-bottom: var(--spacing-36);
+    margin-left: var(--spacing-20);
+}
+
+/* SECTION FOOTER IMG */
+
+/*.img_footer {
+    display: flex;
+    justify-content: end;
+    position: relative;
+}*/

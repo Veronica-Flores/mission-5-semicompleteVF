@@ -1,0 +1,113 @@
+/*BUSQUEDA CONTAINER*/
+
+.busqueda__form {
+    padding: var(--spacing-36) 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--spacing-24);
+}
+
+.busqueda__button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 4rem;
+    height: 4rem;
+}
+
+.busqueda__input {
+    font-size: var(--font-medium);
+    font-weight: 500;
+    border: 2px solid var(--dark-500);
+    border-radius: 6px;
+    padding: var(--spacing-8) var(--spacing-16);
+    min-width: 50rem;
+}
+
+/*LISTADO*/
+.listado__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.listado__title {
+    font-family: var(--alternative-font);
+    font-size: var(--font-display);
+    font-weight: 700;
+}
+
+.listado__functions {
+    display: flex;
+    gap: var(--spacing-28);
+    align-items: center;
+}
+
+.functions__title {
+    font-size: var(--font-large);
+    font-weight: 700;
+}
+
+.functions__button {
+    cursor: pointer;
+    background-color: var(--primary-solid);
+    color: var(--light-font-solid);
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    border-radius: 6px;
+    font-size: var(--font-jumbo);
+    transition: all .3s;
+}
+
+.functions__button:hover {
+    filter: invert(1);
+    transform: translateY(-1px);
+    box-shadow: 1px 1px 5px var(--primary-900);
+}
+
+
+
+.listado__items {
+    padding: var(--spacing-36) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-36);
+}
+
+.listado__item {
+    display: grid;
+    grid-template-columns: 1fr 2fr 4fr 3fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.listado__titles {
+    font-weight: 700;
+    font-size: var(--font-large);
+}
+
+.listado-item__text {
+    font-weight: 400;
+    font-size: var(--font-large);
+}
+
+
+.listado__item a{
+    display: inline-block;
+}
+
+.listado__item a img {
+    height: 100%;
+    width: auto;
+    transition: .5s;
+}
+
+.listado__item a:hover img{
+    filter:  brightness(.1);
+    transform: translateY(-1px);
+}

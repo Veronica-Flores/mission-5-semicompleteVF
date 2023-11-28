@@ -1,0 +1,98 @@
+<%- include('../partials/header') %>
+<main class="carrito"> <!-- Inicio Main -->
+
+    <h2 class="carrito__titulo">CARRITO DE COMPRAS</h2>
+
+    <div class="carrito__lista">
+        <div class="carrito__info">
+            <p>DETALLE DE PRODUCTO</p>
+            <p>CANTIDAD</p>
+            <p>TOTAL</p>
+        </div>
+
+        <div class="carrito__producto">
+            <div>
+                <img src="../../img/star-wars/baby-yoda-1.webp" alt="baby-yoda">
+
+                <div>
+                    <div>
+                        <h3 class="carrito__producto__nombre">BABY YODA BLUEBALL</h3>
+                        <h4 class="carrito__producto__franquicia">STAR WARS</h4>
+                    </div>
+
+                    <p class="carrito__producto__precio">precio: $1799,99</p>
+                </div>
+            </div>
+
+            <div>
+                <p>1</p>
+                <button class="btn">+</button>
+                <button class="btn">-</button>
+            </div>
+
+            <div>
+                <p>$3599,98</p>
+            </div>
+
+            <div>
+                <button>x</button>
+            </div>
+        </div>
+
+        <div class="carrito__producto">
+            <div>
+                <img src="../../img/pokemon/pidgeotto-1.webp" alt="pidgeotto">
+
+                <div>
+                    <div>
+                        <h3 class="carrito__producto__nombre">PIDGEOTTO</h3>
+                        <h4 class="carrito__producto__franquicia">POKEMON</h4>
+                    </div>
+
+                    <p class="carrito__producto__precio">Precio unitario: $1799,99</p>
+                </div>
+            </div>
+
+            <div>
+                <p>1</p>
+                <button class="btn">+</button>
+                <button class="btn">-</button>
+            </div>
+
+            <div>
+                <p>$1799,99</p>
+            </div>
+
+            <div>
+                <button>x</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="carrito__resumen">
+        <h2 class="carrito__resumen__titulo">RESUMEN</h2>
+
+        <div class="carrito__resumen__info">
+            <div class="resumen__info__cantidad">
+                <h6>CANTIDAD DE ELEMENTOS</h6>
+                <p>3</p>
+            </div>
+            <div class="resumen__info__subtotal">
+                <h6>SUBTOTAL</h6>
+                <p>$5.399,97</p>
+            </div>
+            <div class="resumen__info__envio">
+                <h6>ENVIO</h6>
+                <p>$0,00</p>
+            </div>
+            <div class="resumen__info__total">
+                <h6>TOTAL</h6>
+                <p>$5.399,97</p>
+            </div>
+        </div>
+
+        <button class="carrito__resumen__boton">IR A PAGAR</button>
+    </div>
+
+</main> <!-- Fin Main -->
+<%- include('../partials/footer') %>

@@ -1,0 +1,73 @@
+.form__title{
+    font-family: var(--alternative-font);
+    font-size: var(--font-display);
+    font-weight: 700;
+    margin: var(--spacing-36) 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-group > label{
+    font-size: var(--font-medium);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-8);
+}
+
+.form-group > input, .form-group > select, .form-group > textarea {
+    border-radius: 6px;
+    border: 2px solid var(--dark-solid);
+    padding: var(--spacing-8);
+    margin-bottom: var(--spacing-12);
+}
+
+.form-group__checkbox {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: var(--spacing-8) 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: var(--font-xsmall);
+}
+
+.form-group__price > input {
+    border-radius: 6px;
+    border: 2px solid var(--dark-solid);
+    padding: 1px;
+    text-align: center;
+    
+}
+
+.form-group__price{
+    display: flex;
+    text-transform: uppercase;
+    align-items: center;
+    gap: var(--spacing-8);
+    margin-bottom: var(--spacing-12);
+}
+
+.form-group__price > input{
+    width: 50px;
+}
+
+.checkbox {
+    height: var(--spacing-16);
+    width: var(--spacing-16);
+}
+
+::-webkit-input-placeholder { /* Edge */
+    color: var(--dark-300);
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--dark-300);
+}
+
+::placeholder{
+    color: var(--dark-300);
+}
+

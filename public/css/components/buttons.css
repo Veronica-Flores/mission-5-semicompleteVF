@@ -1,0 +1,38 @@
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.btn--primary {
+    background-color: var(--primary-solid);
+    color: var(--light-font-solid);
+    transition: background .3s ease-in-out;
+}
+
+.btn--primary:hover {
+    background-color: var(--dark-bg-solid);
+}
+
+.btn--medium {
+    font-size: var(--font-small);
+    padding: var(--spacing-8) var(--spacing-12);
+    font-weight: 400;
+}
+
+.btn--block {
+    display: block;
+    width: 100%;
+}

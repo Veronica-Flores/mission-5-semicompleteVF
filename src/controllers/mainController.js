@@ -1,13 +1,14 @@
+const ItemModel = require('../models/itemModel.js')
+
 const mainControllers = {
     homeView: async (req, res) => {
-        //const licences = await LicenceService.getAllItemsLicences();
-        //const categories = await CategoryServicie.getAllItemsCategories();
-        //res.send('Ruta de página de Home')
+        const items = await ItemModel.getAll(5);
         res.render('home', {
             view: {
                 title: "Home | Funkoshop"
-            }
-        })
+            },
+            items: items
+        });
     },
     contactView: async (req, res) => {
         //res.send('Ruta de página de Contacto'),

@@ -7,10 +7,12 @@ const shopRoutes = require ('./src/routes/shopRoutes.js');
 const adminRoutes = require ('./src/routes/adminRoutes.js');
 const authRouters = require ('./src/routes/authRoutes.js');
 
-const PORT = process.env.PORT || 3100;
+const port = process.env.PORT || 3100;
 
 /*Define carpeta de archivos estáticos*/
 app.use (express.static('public'));
+app.use(express.urlencoded());
+app.use(express.json());
 
 /*Rutas de aplicación*/
 app.use('/', mainRoutes); /*enlazamos el archivo mainRoutes al entry point*/
@@ -23,4 +25,4 @@ app.set('view engine', 'ejs');
 app.set('views', './src/views');
 
 
-app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`)); // escucho a traves del puerto 5000 y devuelvo mensaje
+app.listen(port, () => console.log(`Servidor corriendo en http://localhost:${port}`)); // escucho a traves del puerto 3100 y devuelvo mensaje

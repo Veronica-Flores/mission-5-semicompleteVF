@@ -1,21 +1,5 @@
 const { conn } = require('../config/conn.js');
 
-/*const getItem = async () => {
-    try {
-    const [rows] = await conn.query('SELECT * FROM funko_test.product;');
-    return rows;
-    } catch (error) {
-    throw error;
-    } finally {
-    conn.releaseConnection();
-    }
-   }
-
-   module.exports = {
-    getItem
-   }
-*/
-
 const getAll = async (params) => {
     try {
         const [rows] = await conn.query('SELECT product_id, product_name, price, product_description, dues, image_front, image_back, licence_name FROM funko_test.product INNER JOIN funko_test.licence ON funko_test.product.licence_id = funko_test.licence.licence_id LIMIT ?;', params);
@@ -43,7 +27,47 @@ const getById = async (id) => {
     }
 }
 
+const getAll2 = async () => {
+    try {
+        const [rows] = await conn.query('SELECT product_id, product_name, sku, licence_name FROM funko_test.product INNER JOIN funko_test.licence ON funko_test.product.licence_id = funko_test.licence.licence_id ORDER BY funko_test.product.product_id;');
+        return rows;
+    } catch (error) {
+        return "No se pudo obtener la lista de items.";
+    } finally {
+        conn.releaseConnection();
+    }
+}
+
+const crearItem = async (categoria, licencia, nombre, descripcion, sku, precio, stock, descuento, cuotas) => {
+    try {
+        const [itemNuevo] = await conn.query(`INSERT INTO funko_test.product (product_name, product_description, price, stock, discount, sku, dues, image_front, image_back, licence_id, category_id)
+        VALUES ("${nombre}", "${descripcion}", "${precio}", "${stock}", "${descuento}", "${sku}", "${cuotas}", "", "", "${licencia}", "${categoria}");`)
+		return itemNuevo;
+	} catch (error) {
+		//console.log(error)
+        return "No se pudo crear el item.";
+	} finally {
+		conn.releaseConnection()
+	}
+}
+
+const eliminarItem = async (id) => {
+    try {
+        const [itemEliminado] = await conn.query('DELETE FROM funko_test.product WHERE product_id = ?;', [id]);
+        console.log(itemEliminado);
+        return itemEliminado;
+    } catch (error) {
+        console.log(error)
+        return "No se pudo eliminar el item."; 
+    } finally {
+        conn.releaseConnection()
+    }
+}
+
 module.exports = {
     getAll,
-    getById
+    getById,
+    getAll2,
+    crearItem,
+    eliminarItem
 }

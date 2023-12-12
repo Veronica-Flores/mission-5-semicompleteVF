@@ -3,29 +3,29 @@
     <section class="login__container">
         <h1 class="login__title">CREA TU CUENTA</h1>
         <p >Completa el formulario para ser parte del mundo de los Funkos</p>
-        <form action="../auth/register" id="login__form" method="POST" enctype="application/x-www-form-urlencoded">
+        <form action="/auth/register" id="login__form" method="post" enctype="application/x-www-form-urlencoded">
             <div class="login__separador">
                 <label for="login-nombre" class="login__label">Nombre</label>
-                <input type="text" class="login__input" placeholder="Verónica" name="login-nombre" id="login-nombre">
+                <input type="text" class="login__input" placeholder="Verónica" name="login_nombre" id="login-nombre">
             </div>
             <div class="login__separador">
                 <label for="login-apellido" class="login__label">Apellido:</label>
-                <input type="text" class="login__input" placeholder="Flores" name="login-apellido" id="login-apellido">
+                <input type="text" class="login__input" placeholder="Flores" name="login_apellido" id="login-apellido">
             </div>
             <div class="login__separador">
                 <label for="login-email" class="login__label">Email:</label>
-                <input type="email" class="login__input" placeholder="veronicaflores@correo.com" name="login-email" id="login-email"> 
+                <input type="email" class="login__input" placeholder="veronicaflores@correo.com" name="login_email" id="login-email"> 
             </div>
             <div class="login__separador">
                 <label for="login-pass" class="login__label">Contraseña:</label>
-                <input type="password" name="login-pass" class="login__input" id="login-pass">
+                <input type="password" name="login_pass" class="login__input" id="login-pass">
             </div>
             <div class="login__separador">
                 <label for="login-rep-pass" class="login__label">Repita Contraseña:</label>
                 <input type="password" name="login-rep-pass" class="login__input" id="login-rep-pass">
             </div>
             <div class="login__separador">
-                <a href="/" type="submit" class="login__btn">Registrar</a>
+                <button type="submit" class="login__btn">Registrar</button>
                 <div class="login__recordarme">
                     <input type="checkbox" name="login-acepTer" class="checkbox" id="login-acepTer">
                     <label for="login-acepTer" class="login__label">Acepto Términos y Condiciones</label>

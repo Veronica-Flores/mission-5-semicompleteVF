@@ -2,10 +2,11 @@ const { conn } = require ('../config/conn.js');
 const crypt = require ('bcryptjs');
 
 const crearUsuario = async (nombre, apellido, email, password) => {
-	const hash = await crypt.hash(password, 12)
+	const hash = await crypt.hash(password, 4)
+	console.log(hash);
 	try {
 		const [creado] = await conn.query(`INSERT INTO funko_test.user (name, lastname, email, password)
-		VALUES ("${nombre}", "${apellido}", "${email}", "${hash}");`)
+			VALUES ("${nombre}", "${apellido}", "${email}", "${hash}");`)
 		return creado
 	} catch (error) {
 		console.log(error)
@@ -14,11 +15,11 @@ const crearUsuario = async (nombre, apellido, email, password) => {
 	}
 }
 
-const login = async (nombre, password) => {
+const login = async (email, password) => {
 	const hash = await crypt.hash(password, 12)
-	try {
+	try {	
 		const [user] = await conn.query(`SELECT * FROM funko_test.user 
-        WHERE name = "${nombre}" and password = "${hash}";`)
+        WHERE email = "${email}" and password = "${hash}";`) //va hash
 		return user
 	} catch (error) {
 		console.log(error)

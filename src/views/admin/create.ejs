@@ -7,44 +7,42 @@
             <div class="form-separador">
                 <label for="categoria" class="form-categ">Categoría: </label>
                 <select name="categoria" id="categoria" required>
-                    <option value="" selected>Seleccionar</option>
-                    <option value="figuras">Figuras</option>
-                    <option value="funko-pops">Funko pops</option>
-                    <option value="otros">Otros</option>
+                    <option value="1">Funkos</option>
+                    <option value="2">Remeras</option>
+                    <option value="3">Llaveros</option>
                 </select>
                 <label for="licencia" class="form-licencia">Licencia: </label>
                 <select name="licencia" id="licencia" required>
-                    <option value="" selected>Seleccionar</option>
-                    <option value="star-wars">Star Wars</option>
-                    <option value="pokemon">Pokemon</option>
-                    <option value="harry-potter">Harry Potter</option>
+                    <option value="1">Pokemon</option>
+                    <option value="2">Star Wars</option>
+                    <option value="3">Harry Potter</option>
                 </select>
             </div>
             <div class="form-separador">
                 <label for="nombre-producto" class="form-nomProd">Nombre del producto: </label>
-                <input type="text" id="nombre-producto" class="input_nuevoItem"
+                <input type="text" id="nombre-producto" class="input_nuevoItem" name="nombre_producto"
                     placeholder="Kakashi Hatake Shippuden Saga" data-placeholder="Kakashi Hatake Shippuden Saga">
             </div>
             <div class="form-separador">
-                <textarea name="descripcion-producto" id="descripcion-producto" cols="80" rows="10"
+                <textarea name="descripcion_producto" id="descripcion-producto" cols="80" rows="10"
                     placeholder="Descripción del producto"></textarea>
             </div>
             <div class="form-separador">
                 <label for="codigo" class="form-codigo">SKU: </label>
-                <input type="text" id="codigo" class="input_nuevoItem" placeholder="SSK111AB001" readonly>
+                <input type="text" id="codigo" name="sku" class="input_nuevoItem" placeholder="SSK111AB001">
                 <label for="precio" class="form-precio">Precio: </label>
-                <input type="text" id="precio" class="input_nuevoItem" placeholder="$0.000,00">
+                <input type="text" id="precio" name="precio" class="input_nuevoItem" placeholder="$0.000,00">
                 <label for="stock" class="form-stock">Stock: </label>
-                <input type="number" id="stock" class="input_nuevoItem" placeholder="0" readonly>
+                <input type="number" id="stock" name="stock" class="input_nuevoItem" placeholder="0">
             </div>
             <div class="form-separador">
                 <label for="descuento" class="form-descuento">Descuento: </label>
-                <input type="text" id="descuento" class="input_nuevoItem" placeholder="0%">
+                <input type="text" id="descuento" name="descuento" class="input_nuevoItem" placeholder="0%">
                 <label for="cuotas" class="form-cuotas">Cuotas: </label>
                 <select name="cuotas" id="cuotas" required>
-                    <option value="3-cuotas">3 Cuotas sin interés</option>
-                    <option value="6-cuotas">6 Cuotas sin interés</option>
-                    <option value="12-cuotas">12 Cuotas sin interés</option>
+                    <option value="3">3 Cuotas sin interés</option>
+                    <option value="6">6 Cuotas sin interés</option>
+                    <option value="12">12 Cuotas sin interés</option>
                 </select>
             </div>
             <div class="form-separador">

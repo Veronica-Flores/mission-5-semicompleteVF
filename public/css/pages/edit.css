@@ -3,3 +3,7 @@ p {
     font-size: var(--font-large);
     font-weight: 500;
 }
+
+.producto-btn {
+    margin-bottom: var(--spacing-36);
+}

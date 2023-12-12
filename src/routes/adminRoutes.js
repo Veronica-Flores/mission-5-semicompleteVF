@@ -7,17 +7,15 @@ const {
     createPostView,
     editItemView,
     editPutView,
-    deleteView
+    deleteItemView
 } = require ('../controllers/adminController.js');
-
-//const adminControllers = require ('../controllers/adminController.js');
 
 router.get('/', adminView);
 router.get('/create', createView);
 router.post('/create', createPostView);
 router.get('/edit/:id', editItemView);
 router.put('/edit/:id', editPutView);
-router.delete('/delete/:id', deleteView);
+router.delete('/delete/:id', deleteItemView);
 
 
 module.exports = router;

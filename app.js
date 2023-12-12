@@ -11,14 +11,14 @@ const port = process.env.PORT || 3100;
 
 /*Define carpeta de archivos estáticos*/
 app.use (express.static('public'));
-app.use(express.urlencoded());
-app.use(express.json());
+app.use (express.urlencoded({extended: true}));
+app.use (express.json());
 
 /*Rutas de aplicación*/
-app.use('/', mainRoutes); /*enlazamos el archivo mainRoutes al entry point*/
+app.use ('/', mainRoutes); /*enlazamos el archivo mainRoutes al entry point*/
 app.use ('/shop', shopRoutes);
 app.use ('/admin', adminRoutes);
-app.use('/auth', authRouters);
+app.use ('/auth', authRouters);
 
 /* Motor de plantillas EJS*/
 app.set('view engine', 'ejs');

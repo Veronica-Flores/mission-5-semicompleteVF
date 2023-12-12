@@ -27,19 +27,6 @@ const login = async (email) => {
 	}
 }
 
-/*const login = async (email, password) => {
-	const hash = await crypt.hash(password, 12)
-	try {	
-		const [user] = await conn.query(`SELECT * FROM funko_test.user 
-        WHERE email = "${email}" and password = "${hash}";`)
-		return user
-	} catch (error) {
-		console.log(error)
-	} finally {
-		conn.releaseConnection()
-	}
-}*/
-
 module.exports = {
 	crearUsuario,
 	login

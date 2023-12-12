@@ -10,15 +10,12 @@ const authControllers = {
         })
     },
     loginPostView: async (req, res) => {
-        const {email, password} = req.body
-        const valido = await userModel.login(email, password);
+        const {email} = req.body
+        const [valido] = await userModel.login(email);
         if(valido === undefined){
-			res.redirect('/') //'/login/?error=1'
-		} //else if(!(await crypt.compare(password, valido.password))){
-			//res.redirect('/') } //'/login/?error=1'
-		else {
-            //req.session.userid = valido.idusers
-			res.redirect(`/admin?user=${valido.user_id}`) ///admin?user=${valido.userid} me toma usuario undefined y entra por el else
+			res.redirect('/')
+        } else {
+			res.redirect(`/admin?user=${valido.user_id}`);
 		}
     },
     registerView: async (req, res) => {

@@ -1,4 +1,3 @@
-/* COPIADO DESDE ARCHIVO DE TAREAS  
 const { validationResult } = require('express-validator')
 
 const validationInput = (req, res, next) => {
@@ -9,4 +8,4 @@ const validationInput = (req, res, next) => {
 	next()
 }
 
-module.exports = validationInput */
+module.exports = validationInput

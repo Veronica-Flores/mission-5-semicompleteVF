@@ -15,11 +15,10 @@ const crearUsuario = async (nombre, apellido, email, password) => {
 	}
 }
 
-const login = async (email, password) => {
-	const hash = await crypt.hash(password, 12)
+const login = async (email) => {
 	try {	
 		const [user] = await conn.query(`SELECT * FROM funko_test.user 
-        WHERE email = "${email}" and password = "${hash}";`) //va hash
+        WHERE email = "${email}";`)
 		return user
 	} catch (error) {
 		console.log(error)
@@ -27,6 +26,19 @@ const login = async (email, password) => {
 		conn.releaseConnection()
 	}
 }
+
+/*const login = async (email, password) => {
+	const hash = await crypt.hash(password, 12)
+	try {	
+		const [user] = await conn.query(`SELECT * FROM funko_test.user 
+        WHERE email = "${email}" and password = "${hash}";`)
+		return user
+	} catch (error) {
+		console.log(error)
+	} finally {
+		conn.releaseConnection()
+	}
+}*/
 
 module.exports = {
 	crearUsuario,

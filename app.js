@@ -1,5 +1,6 @@
 const express = require('express'); /*Requiero express para mi proyecto*/
 const app = express(); /*levanto express y ya puedo utilizarlo*/
+const method = require('method-override');
 
 /*Import de las rutas*/
 const mainRoutes = require ('./src/routes/mainRoutes.js'); //creo la varible para llamarla desde la carpeta
@@ -10,9 +11,10 @@ const authRouters = require ('./src/routes/authRoutes.js');
 const port = process.env.PORT || 3100;
 
 /*Define carpeta de archivos estáticos*/
-app.use (express.static('public'));
+app.use (express.static(__dirname + '/public'));
 app.use (express.urlencoded({extended: true}));
 app.use (express.json());
+app.use(method('_method'));
 
 /*Rutas de aplicación*/
 app.use ('/', mainRoutes); /*enlazamos el archivo mainRoutes al entry point*/

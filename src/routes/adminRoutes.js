@@ -15,7 +15,7 @@ router.get('/create', createView);
 router.post('/create', createPostView);
 router.get('/edit/:id', editItemView);
 router.put('/edit/:id', editPutView);
-router.delete('/delete/:id', deleteItemView);
+router.get('/delete/:id', deleteItemView);
 
 
 module.exports = router;

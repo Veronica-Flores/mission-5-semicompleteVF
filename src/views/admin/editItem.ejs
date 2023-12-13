@@ -2,47 +2,47 @@
     <main class="container"> <!-- Inicio Main -->
         <section class="form-conteiner">
             <h1>EDITAR ITEM</h1>
-            <form action="" method="post" id="form-crear-item">
+            <form action="/admin/edit/<%= item.product_id %>" method="post" id="form-crear-item" enctype="application/x-www-form-urlencoded">
                 <!--Inicio formulario Crear Nuevo Item-->
                 <div class="form-separador">
                     <label for="categoria" class="form-categ">Categoría: </label>
                     <select name="categoria" id="categoria" required>
-                        <option value="1">Funkos</option>
-                        <option value="2">Remeras</option>
-                        <option value="3">Llaveros</option>
+                        <option value="1" <% if (item.category_id == 1) { %>selected<% } %>>Funkos</option>
+                        <option value="2" <% if (item.category_id == 2) { %>selected<% } %>>Remeras</option>
+                        <option value="3" <% if (item.category_id == 3) { %>selected<% } %>>Llaveros</option>
                     </select>
                     <label for="licencia" class="form-licencia">Licencia: </label>
                     <select name="licencia" id="licencia" required>
-                        <option value="1">Pokemon</option>
-                        <option value="2">Star Wars</option>
-                        <option value="3">Harry Potter</option>
+                        <option value="1" <% if (item.licence_id == 1) { %>selected<% } %>>Pokemon</option>
+                        <option value="2" <% if (item.licence_id == 2) { %>selected<% } %>>Star Wars</option>
+                        <option value="3" <% if (item.licence_id == 3) { %>selected<% } %>>Harry Potter</option>
                     </select>
                 </div>
                 <div class="form-separador">
                     <label for="nombre-producto" class="form-nomProd">Nombre del producto: </label>
-                    <input type="text" id="nombre-producto" class="input_nuevoItem"
+                    <input value="<%= item.product_name %>" type="text" id="nombre-producto" class="input_nuevoItem"
                         placeholder="Kakashi Hatake Shippuden Saga" data-placeholder="Kakashi Hatake Shippuden Saga">
                 </div>
                 <div class="form-separador">
-                    <textarea name="descripcion-producto" id="descripcion-producto" cols="80" rows="10"
+                    <textarea value="<%= item.product_description %>" name="descripcion-producto" id="descripcion-producto" cols="80" rows="10"
                         placeholder="Descripción del producto"></textarea>
                 </div>
                 <div class="form-separador">
                     <label for="codigo" class="form-codigo">SKU: </label>
-                    <input type="text" id="codigo" class="input_nuevoItem" placeholder="SSK111AB001" readonly>
+                    <input value="<%= item.sku %>" type="text" id="codigo" class="input_nuevoItem" placeholder="SSK111AB001">
                     <label for="precio" class="form-precio">Precio: </label>
-                    <input type="text" id="precio" class="input_nuevoItem" placeholder="$0.000,00">
+                    <input value="<%= item.price %>" type="text" id="precio" class="input_nuevoItem" placeholder="$0.000,00">
                     <label for="stock" class="form-stock">Stock: </label>
-                    <input type="number" id="stock" class="input_nuevoItem" placeholder="0" readonly>
+                    <input value="<%= item.stock %>" type="number" id="stock" class="input_nuevoItem" placeholder="0">
                 </div>
                 <div class="form-separador">
                     <label for="descuento" class="form-descuento">Descuento: </label>
-                    <input type="text" id="descuento" class="input_nuevoItem" placeholder="0%">
+                    <input value="<%= item.discount %>" type="text" id="descuento" class="input_nuevoItem" placeholder="0%">
                     <label for="cuotas" class="form-cuotas">Cuotas: </label>
                     <select name="cuotas" id="cuotas" required>
-                        <option value="3-cuotas">3 Cuotas sin interés</option>
-                        <option value="6-cuotas">6 Cuotas sin interés</option>
-                        <option value="12-cuotas">12 Cuotas sin interés</option>
+                        <option value="3" <%= (item.dues == 3 ? "selected" : '') %>>3 Cuotas sin interés</option>
+                        <option value="6" <%= (item.dues == 6 ? "selected" : '') %>>6 Cuotas sin interés</option>
+                        <option value="12" <%= (item.dues == 12 ? "selected" : '') %>>12 Cuotas sin interés</option>
                     </select>
                 </div>
                 <div class="form-separador">

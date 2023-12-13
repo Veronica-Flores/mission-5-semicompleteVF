@@ -5,25 +5,25 @@ const crearUsuario = async (nombre, apellido, email, password) => {
 	const hash = await crypt.hash(password, 4)
 	console.log(hash);
 	try {
-		const [creado] = await conn.query(`INSERT INTO funko_test.user (name, lastname, email, password)
-			VALUES ("${nombre}", "${apellido}", "${email}", "${hash}");`)
+		const [creado] = await conn.query(`INSERT INTO user (name, lastname, email, password)
+			VALUES ("${nombre}", "${apellido}", "${email}", "${hash}");`);
 		return creado
 	} catch (error) {
-		console.log(error)
+		console.log(error);
 	} finally {
-		conn.releaseConnection()
+		conn.releaseConnection();
 	}
 }
 
 const login = async (email) => {
 	try {	
-		const [user] = await conn.query(`SELECT * FROM funko_test.user 
-        WHERE email = "${email}";`)
+		const [user] = await conn.query(`SELECT * FROM user 
+        WHERE email = "${email}";`);
 		return user
 	} catch (error) {
-		console.log(error)
+		console.log(error);
 	} finally {
-		conn.releaseConnection()
+		conn.releaseConnection();
 	}
 }
 

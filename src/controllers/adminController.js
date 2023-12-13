@@ -22,17 +22,13 @@ const adminControllers = {
         res.redirect('/admin');
     },
     editItemView: async (req, res) => {
-        //const id = req.params.id;
-        //const { data: categories } = await ItemModel.getAllItemsCategories();
-        //const { data: licences } = await ItemModel.getAllItemsLicences();
-        //const item = await ItemModel.getById(id);
+        const id = req.params.id;
+        const item = await ItemModel.traerItem(id);
         res.render('admin/editItem', {
             view: {
                 title: "Edit | Funkoshop"
             },
-            //item: item,
-            //categories,
-            //licences
+            item: item,
         });
     },    
     editPutView: (req, res) => res.send('Route for Admin Edit item for ID PUT'),

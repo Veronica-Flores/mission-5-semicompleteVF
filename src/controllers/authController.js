@@ -26,10 +26,12 @@ const authControllers = {
         })
     },
     registerPostView: async (req, res) =>  {
-        const creado = await userModel.crearUsuario(req.body.login_nombre, req.body.login_apellido, req.body.login_email, req.body.login_pass)
-        res.redirect('/')
+        const creado = await userModel.crearUsuario(req.body.login_nombre, req.body.login_apellido, req.body.login_email, req.body.login_pass);
+        res.redirect('/');
     },    
-    logoutView: (req, res) => res.send('Route for Logout')
+    logoutView: (req, res) => {
+        res.redirect('/');
+    }
 }
 
 module.exports = authControllers;

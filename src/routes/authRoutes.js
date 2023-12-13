@@ -1,29 +1,39 @@
-const express = require ('express');
+const express = require('express');
 const router = express.Router();
-//const {conn} = require ('./../config/conn.js')
-//const {body} = require ('express-validator');
-//const validacion = require ('./../middlewares/validation.js) ESTO ES PARA EL LOGIN VALIDACION
+const {conn} = require ('./../config/conn.js');
+const {body} = require ('express-validator');
+const validacion = require('./../middlewares/validation');
 
 const {
-    loginView,
-    loginPostView,
-    registerView,
-    registerPostView,
-    logoutView
-} = require ('../controllers/authController.js');
+	loginView,
+	loginPostView,
+	registerView,
+	registerPostView,
+	logoutView
+} = require('../controllers/authController.js');
 
+/* VALIDACION PARA LOGIN */
+const validacionLogin = [
+	body('email')
+		.notEmpty()
+		.withMessage('El campo de email no puede estar vacío.')
+		.isLength({min: 3})
+		.withMessage('El email debe tener longitud mínima de 3 caracteres.'),
+	body('pass').isLength({min: 3}).withMessage('La contraseña debe tener la longitud correcta.')
+	];
 
-/* VALIDACION PARA REGISTRO Y LOGIN
+/* VALIDACION PARA REGISTRO */
 const validacionRegistro = [
-	body("nombre")
-	.isLength({min: 3})
-	.withMessage("Ingrese un nombre válido")
-	.bail()
-	.custom((value, {req}) => {
+	body("login_email")
+		.isLength({ min: 3 })
+		.withMessage("Ingrese un email válido")
+		.bail()
+		.custom((value, { req }) => {
 			return new Promise(async (resolve, reject) => {
 				try {
-					const [usuarioExiste] = await conn.query(`SELECT * FROM users WHERE nombre = '${value}'`)
-					if(!usuarioExiste){
+					const [usuarioExiste] = await conn.query(`SELECT * FROM user WHERE email = '${value}'`);
+					console.log(usuarioExiste.length);	
+					if (usuarioExiste.length > 0) {
 						return reject()
 					} else {
 						return resolve()
@@ -33,28 +43,13 @@ const validacionRegistro = [
 				}
 			})
 		})
-	.withMessage("Nombre duplicado"),
-	body('apellido')
-	.isLength({min: 3})
-	.withMessage('Ingrese un apellido válido')
-	.custom((value, {req}) => value === req.body.apellido2)
-	.withMessage('No coindice el apellido')
-	]
-
-const validacionLogin = [
-	body('nombre')
-		.notEmpty()
-		.withMessage('El campo de nombre no puede estar vacío')
-		.isLength({min: 3})
-		.withMessage('El nombre debe tener longitud mínima de 3 caracteres'),
-	body('apellido').isLength({min: 3}).withMessage('El apellido debe tener longitud correcta')
-	]
-*/
+		.withMessage("Email duplicado")
+	];
 
 router.get('/login', loginView);
-router.post('/login', loginPostView);
+router.post('/login', validacionLogin, validacion, loginPostView);
 router.get('/register', registerView);
-router.post('/register', registerPostView);
+router.post('/register', validacionRegistro, validacion, registerPostView);
 router.get('/logout', logoutView);
 
 module.exports = router;

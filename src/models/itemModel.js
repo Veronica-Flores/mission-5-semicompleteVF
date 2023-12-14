@@ -80,6 +80,7 @@ const eliminarItem = async (id) => {
 const traerItem = async (id) => {
     try {
         const [item] = await conn.query('SELECT product_id, product_name, price, product_description, dues, sku, licence_id, category_id, discount, stock FROM product WHERE product_id = ?;', id);
+        console.log(item[0]);
         return item [0];
     } catch (error) {
         //console.log(error);
@@ -89,6 +90,30 @@ const traerItem = async (id) => {
     }
 }
 
+const actualizarItem = async (categoria, licencia, nombre, descripcion, sku, precio, stock, descuento, cuotas, id) => {
+    try {
+        console.log(descripcion);
+        const [itemActualizado] = await conn.query(`UPDATE product 
+        SET
+            product_name = "${nombre}"
+            , product_description = "${descripcion}"
+            , price = "${precio}"
+            , stock = "${stock}"
+            , discount = "${descuento}"
+            , sku = "${sku}"
+            , dues = "${cuotas}"
+            , licence_id = "${licencia}"
+            , category_id = "${categoria}"
+        WHERE product_id = "${id}";`)
+		return itemActualizado;
+	} catch (error) {
+		//console.log(error)
+        return "No se pudo editar el item.";
+	} finally {
+		conn.releaseConnection()
+	}
+}
+
 module.exports = {
     getItemLicence,
     getAll,
@@ -96,5 +121,6 @@ module.exports = {
     getAll2,
     crearItem,
     eliminarItem,
-    traerItem
+    traerItem,
+    actualizarItem
 }

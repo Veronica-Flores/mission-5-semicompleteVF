@@ -31,7 +31,10 @@ const adminControllers = {
             item: item,
         });
     },    
-    editPutView: (req, res) => res.send('Route for Admin Edit item for ID PUT'),
+    editPutView: async (req, res) => {
+        const actualizado = await ItemModel.actualizarItem(req.body.categoria, req.body.licencia, req.body.nombre_producto, req.body.descripcion_producto, req.body.sku, req.body.precio, req.body.stock, req.body.descuento, req.body.cuotas, req.params.id);
+        res.redirect('/admin');
+    },
     deleteItemView: async (req, res) => {
         console.log('Llegó a la ruta de eliminación'); // Agrega esto para verificar en la consola del servidor
         const id = req.params.id;

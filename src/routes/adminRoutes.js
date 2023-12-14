@@ -14,7 +14,7 @@ router.get('/', adminView);
 router.get('/create', createView);
 router.post('/create', createPostView);
 router.get('/edit/:id', editItemView);
-router.put('/edit/:id', editPutView);
+router.post('/edit/:id', editPutView);
 router.get('/delete/:id', deleteItemView);
 
 
